@@ -136,7 +136,7 @@ a:hover{color:#2b2fb8}
     <h2 style="margin:0;font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:30px;letter-spacing:0.04em;text-transform:uppercase;color:#15153a">{{ t.projects }}</h2>
     <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(20,20,51,0.45)">{{ t.projectsSub }}</span>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:38px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:20px;margin-bottom:38px">
     <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
       <div style="background:rgba(255,255,255,0.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.8);border-radius:18px;box-shadow:0 22px 50px -30px rgba(28,28,90,0.5);overflow:hidden;display:flex;flex-direction:column">
         <div style="display:flex;align-items:center;gap:9px;padding:11px 15px;background:rgba(91,95,233,0.12);border-bottom:1px solid rgba(91,95,233,0.16)">
