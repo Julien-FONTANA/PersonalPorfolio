@@ -45,7 +45,7 @@ a:hover{color:#2b2fb8}
     <button onClick="{{ goAbout }}" style="font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.07em;font-size:14px;font-weight:600;white-space:nowrap;padding:7px 13px;border-radius:9px;border:1px solid transparent;background:{{ navAbout }};color:#1b1b40;cursor:pointer">{{ t.navAbout }}</button>
     <button onClick="{{ goContact }}" style="font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.07em;font-size:14px;font-weight:600;white-space:nowrap;padding:7px 13px;border-radius:9px;border:1px solid transparent;background:{{ navContact }};color:#1b1b40;cursor:pointer">{{ t.navContact }}</button>
     <span style="flex:1"></span>
-    <a href="uploads/CV FONTANA Julien.pdf" style="font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.07em;font-size:14px;font-weight:700;white-space:nowrap;padding:8px 14px;border-radius:9px;background:#5b5fe9;color:#fff;box-shadow:0 10px 22px -12px rgba(91,95,233,0.9)">{{ t.cv }}</a>
+    <a href="{{ t.cvFile }}" style="font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:0.07em;font-size:14px;font-weight:700;white-space:nowrap;padding:8px 14px;border-radius:9px;background:#5b5fe9;color:#fff;box-shadow:0 10px 22px -12px rgba(91,95,233,0.9)">{{ t.cv }}</a>
   </div>
 </div>
 
@@ -393,7 +393,7 @@ a:hover{color:#2b2fb8}
         <div style="display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(91,95,233,0.16);flex-wrap:wrap">
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:rgba(20,20,51,0.55)">{{ t.locLabel }} 01140 · {{ t.permis }}</span>
           <span style="flex:1"></span>
-          <a href="uploads/CV FONTANA Julien.pdf" style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;font-size:14px;white-space:nowrap;padding:10px 16px;border-radius:10px;background:#5b5fe9;color:#fff">{{ t.cv }}</a>
+          <a href="{{ t.cvFile }}" style="font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;font-size:14px;white-space:nowrap;padding:10px 16px;border-radius:10px;background:#5b5fe9;color:#fff">{{ t.cv }}</a>
         </div>
       </div>
     </div>
@@ -608,7 +608,7 @@ const DATA = {
 const T = {
   fr: {
     chromeSub: 'Technical Lead · Engineering Manager · Architechte', navHome: 'Accueil', navXp: 'Expériences', navSkills: 'Compétences',
-    navAbout: 'À propos', navContact: 'Me contacter', cv: 'Télécharger mon CV', layoutLabel: 'accueil',
+    navAbout: 'À propos', navContact: 'Me contacter', cv: 'Télécharger mon CV', cvFile: 'uploads/CV Fontana Julien FR.pdf', layoutLabel: 'accueil',
     winIntro: 'Qui suis-je', winLevels: 'Compétences', winFormation: 'Formation',
     role: 'Architecte & Lead .NET', photoSlot: 'photo\n(portrait à fournir)',
     pitch: 'Bientôt dix ans de .NET, principalement en salle de marché : trading, réconciliation réglementaire, plateformes critiques. Depuis 2025, j\u2019architecture un service RMM chez Hookto (groupe Xefi) et j\u2019amène une équipe de six juniors vers l\u2019autonomie.',
@@ -627,7 +627,7 @@ const T = {
   },
   en: {
     chromeSub: 'Technical Lead · Engineering Manager · Architechte', navHome: 'Home', navXp: 'Experience', navSkills: 'Skills',
-    navAbout: 'About', navContact: 'Contact me', cv: 'Download my CV', layoutLabel: 'home',
+    navAbout: 'About', navContact: 'Contact me', cv: 'Download my CV', cvFile: 'uploads/CV Fontana Julien EN.pdf', layoutLabel: 'home',
     winIntro: 'Who I am', winLevels: 'Skills', winFormation: 'Education',
     role: '.NET Architect & Lead', photoSlot: 'photo\n(portrait to provide)',
     pitch: 'Nearly ten years of .NET, mostly on trading floors: trading, regulatory reconciliation, critical platforms. Since 2025 I have been architecting an RMM service at Hookto (Xefi group) and taking a team of six juniors to autonomy.',
