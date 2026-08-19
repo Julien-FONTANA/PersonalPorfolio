@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=%F0%9F%87%AB%F0%9F%87%B7%F0%9F%87%AC%F0%9F%87%A7&display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;padding:0}
 body{background:#e8e8fa;color:#141433;font-family:Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -31,8 +32,8 @@ a:hover{color:#2b2fb8}
     <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(20,20,51,0.45);letter-spacing:0.02em">{{ t.chromeSub }}</span>
     <span style="flex:1"></span>
     <div style="display:flex;gap:8px;align-items:center">
-      <button onClick="{{ setFr }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:7px;border:1px solid rgba(91,95,233,0.3);background:{{ frBg }};color:#22224a;cursor:pointer">FR</button>
-      <button onClick="{{ setEn }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 9px;border-radius:7px;border:1px solid rgba(91,95,233,0.3);background:{{ enBg }};color:#22224a;cursor:pointer">EN</button>
+      <button onClick="{{ setFr }}" aria-label="Français" title="Français" style="font-family:'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif;font-size:15px;line-height:1;padding:4px 8px;border-radius:7px;border:1px solid rgba(91,95,233,0.3);background:{{ frBg }};cursor:pointer">🇫🇷</button>
+      <button onClick="{{ setEn }}" aria-label="English" title="English" style="font-family:'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif;font-size:15px;line-height:1;padding:4px 8px;border-radius:7px;border:1px solid rgba(91,95,233,0.3);background:{{ enBg }};cursor:pointer">🇬🇧</button>
       <span style="width:11px;height:1.5px;background:rgba(20,20,51,0.4);margin-left:6px"></span>
       <span style="font-size:13px;color:rgba(20,20,51,0.4);line-height:1">✕</span>
     </div>
