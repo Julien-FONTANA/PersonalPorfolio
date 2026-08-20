@@ -137,7 +137,7 @@ a:hover{color:#2b2fb8}
     <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(20,20,51,0.45)">{{ t.projectsSub }}</span>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:20px;margin-bottom:38px">
-    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
       <div style="background:rgba(255,255,255,0.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.8);border-radius:18px;box-shadow:0 22px 50px -30px rgba(28,28,90,0.5);overflow:hidden;display:flex;flex-direction:column">
         <div style="display:flex;align-items:center;gap:9px;padding:11px 15px;background:rgba(91,95,233,0.12);border-bottom:1px solid rgba(91,95,233,0.16)">
           <span style="width:10px;height:10px;border-radius:50%;background:#5b5fe9"></span>
@@ -571,6 +571,14 @@ const DATA = {
   },
   projects: [
     {
+      name: 'Hypervision', kind: { fr: 'Pro', en: 'Pro' }, stack: { fr: 'Supervision de parc · RMM · PHP/Laravel · hub-si · pilotage-à-distance', en: 'Fleet monitoring · RMM · PHP/Laravel · information-hub · remote-management' },
+      text: {
+        fr: 'Hypervision est la plateforme interne XEFI de supervision et de pilotage du parc infogéré. Elle sert de référentiel des machines : chaque poste ou serveur y est enregistré, identifié de façon unique et rattaché à son client. Elle centralise les remontées de l\u2019Agent installé sur les machines pour offrir une vision consolidée et à jour de la flotte. Elle déclenche également les actions à distance : exécution de scripts et de commandes, installation, mise à jour ou redémarrage de l\u2019agent. Au-delà du parc, HPV est le hub d\u2019information de tout XEFI : elle agrège les données de la CRM, des Quotas et des autres logiciels métier ou propriétaires, et devient ainsi le point d\u2019entrée unique de la connaissance client et technique.',
+        en: 'Hypervision is XEFI\u2019s internal platform for monitoring and operating the managed fleet. It acts as the machine registry: every workstation or server is recorded there, uniquely identified and tied to its client. It centralises everything the Agent installed on the machines reports back, to give a consolidated, up-to-date view of the fleet. It also triggers remote actions: running scripts and commands, installing, updating or restarting the agent. Beyond the fleet, HPV is the information hub for all of XEFI: it aggregates data from the CRM, Quotas and the other business or proprietary software, and becomes the single entry point for both client and technical knowledge.'
+      },
+      shot: 'docs/screenshots/hypervision.png', repo: null
+    },
+    {
       name: 'Xefi Wizard', kind: { fr: 'Pro', en: 'Pro' }, stack: '.Net · Installer · RMM · Cross-Platform · Self-Contain',
       text: {
         fr: 'Le Wizard est l\u2019installeur/enrôleur du parc, utilisé sur site par les techniciens. Son rôle : préparer la machine, installer le service Client et lui donner son identité auprès du Proxy. Concrètement il vérifie les prérequis (version de l\u2019installeur, ports réseau sortants), détermine la plateforme cible et la version d\u2019agent à poser, enregistre ou valide la clé d\u2019unicité du poste, et gère les mise à jour, la désinstallation, et remonte le statuts d\u2019installation.',
@@ -587,6 +595,14 @@ const DATA = {
       shot: 'docs/screenshots/agent-diagnostic-tool.png', repo: null
     },
     {
+      name: 'Toggle Feature Manager', kind: { fr: 'Pro', en: 'Pro' }, stack: { fr: 'toggle-feature · configuration par appareil · multi-environnement', en: 'toggle-feature · per-device configuration · multi-environment' },
+      text: {
+        fr: 'Le Toggle Feature Manager est un outil interne qui permet de gérer les règles de toggle-feature de l\u2019agent Xefi — les surcharges de configuration appliquées par appareil à l\u2019exécution. On sélectionne un environnement, on consulte la liste des règles existantes, puis on les ajoute, modifie, copie ou supprime. Une règle cible un appareil, une version, une architecture et un nom de fonctionnalité, avec la valeur forcée associée.',
+        en: 'The Toggle Feature Manager is an internal tool for managing the Xefi agent\u2019s toggle-feature rules — the configuration overrides applied per device at runtime. You pick an environment, browse the list of existing rules, then add, edit, copy or delete them. A rule targets a device, a version, an architecture and a feature name, along with the forced value that goes with it.'
+      },
+      shot: 'docs/screenshots/toggle-feature-manager.png', repo: null
+    },
+    {
       name: 'Poker Ranges', kind: { fr: 'Perso', en: 'Personal' }, stack: '.NET · Avalonia · MVVM · Simulation',
       text: {
         fr: 'Assistant de décision pour le No Limit Hold\u2019em en tournoi. Preflop, la réponse vient d\u2019une charte et l\u2019application dit laquelle et ce qu\u2019elle a dû arrondir. Postflop, elle reconstruit la range de chaque adversaire à partir de ses actions, puis compare l\u2019espérance de chaque action sous un modèle explicite. Aucun conseil n\u2019arrive sans sa justification. Mode compacte et tête à tête.',
@@ -600,7 +616,7 @@ const DATA = {
         fr: 'Logiciel de calcul de complément de ration alimentaire pour chevaux, fait en collaboration avec ma femme, naturopathe et nutritionniste. Le but étant de lui simplifier la vie car les aliments ne donnent pas les mêmes informations en fonction des marques et des pays. Génère des bilans complets, permet la sauvegarde et le suivi des chevaux sur du long terme, et exporte les recommandations en pdf avec son logo en filigrane.',
         en: 'Software for calculating feed supplement rations for horses, built with my wife, a naturopath and nutritionist. The goal was to make her life simpler, since feeds do not report the same information across brands and countries. It generates complete assessments, saves and tracks horses over the long term, and exports recommendations to PDF with her logo as a watermark.'
       },
-      shot: 'uploads/pasted-1787077957692-0.png', repo: 'https://github.com/Julien-FONTANA'
+      shot: 'uploads/pasted-1787077957692-0.png', repo: 'https://github.com/Julien-FONTANA/RationEquine'
     }
   ]
 };
@@ -687,7 +703,7 @@ class Component extends DCLogic {
       hobbies: DATA.hobbies[lang],
       xp, xpShort: xp.slice(0, 4),
       projects: DATA.projects.map(pr => ({
-        name: pr.name, kind: pick(pr.kind, lang), stack: pr.stack, text: pick(pr.text, lang),
+        name: pr.name, kind: pick(pr.kind, lang), stack: pick(pr.stack, lang), text: pick(pr.text, lang),
         shot: pr.shot, shotBg: pr.shot ? 'url("' + pr.shot + '")' : 'none', hasShot: !!pr.shot, noShot: !pr.shot,
         repo: pr.repo, hasRepo: !!pr.repo
       }))
